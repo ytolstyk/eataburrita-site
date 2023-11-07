@@ -1,11 +1,13 @@
 import { BurritoTimer } from "./BurritoTimer";
-import { Container, GetAppLink, Margin } from "./styles";
+import { Container, GetAppLink, H1, Margin } from "./styles";
 
 export function Home() {
   return (
     <Container>
-      <h1>How long has it been since your last burrito?</h1>
-      <BurritoTimer />
+      <H1>How long has it been since your last burrito?</H1>
+      <Margin bottom={2}>
+        <BurritoTimer />
+      </Margin>
       <p>Use this app to help you keep track, and you will never be lost.</p>
       <Margin top={2}>
         <a

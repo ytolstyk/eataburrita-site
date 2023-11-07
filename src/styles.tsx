@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { lighten } from "polished";
 import type * as CSS from "csstype";
+import { media } from "./media";
 
 const base = 12;
 const purple = "#9d00d6";
@@ -33,6 +34,15 @@ export const Page = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+`;
+
+export const H1 = styled.h1`
+  font-size: 36px;
+
+  ${media.md} {
+    font-size: 24px;
+    text-align: center;
+  }
 `;
 
 export const NavWrapper = styled.nav`
@@ -75,11 +85,16 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 24px;
 `;
 
 export const TimerText = styled.div`
   font-size: 60px;
   font-weight: 300;
+
+  ${media.md} {
+    font-size: 48px;
+  }
 `;
 
 export const GetAppLink = styled.div`
@@ -96,5 +111,12 @@ export const GetAppLink = styled.div`
 
   &:hover {
     background-color: ${lighten(0.1, purple)};
+  }
+
+  ${media.md} {
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    font-size: 18px;
   }
 `;

@@ -28,8 +28,4 @@ export const timeHelper = {
   alwaysTwoDigits(num: number) {
     return num < 10 ? `0${num}` : String(num);
   },
-
-  // formatTime(time) {
-  //   return moment(time).format('MMMM Do YYYY, h:mm:ssa');
-  // }
 };
