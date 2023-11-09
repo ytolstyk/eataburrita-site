@@ -3,6 +3,8 @@ import { Home } from "./Home";
 import { Navbar } from "./Navbar";
 import { Privacy } from "./Privacy";
 import { Eula } from "./Eula";
+import { TalismanPrivacy } from "./TalismanPrivacy";
+import { TalismanEula } from "./TalismanEula";
 import { Page } from "./styles";
 
 export function App() {
@@ -14,6 +16,11 @@ export function App() {
           <Route path="/" element={<Home />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/eula" element={<Eula />} />
+          <Route
+            path="/talisman-tracker/privacy"
+            element={<TalismanPrivacy />}
+          />
+          <Route path="/talisman-tracker/eula" element={<TalismanEula />} />
         </Routes>
       </Page>
     </BrowserRouter>
