@@ -120,3 +120,8 @@ export const GetAppLink = styled.div`
     font-size: 18px;
   }
 `;
+
+export const BoringContainer = styled.div`
+  max-width: 800px;
+  padding: 48px;
+`;
