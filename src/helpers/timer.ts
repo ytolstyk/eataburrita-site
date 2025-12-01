@@ -14,10 +14,10 @@ export const timeHelper = {
       elapsed = 0;
     }
 
-    let tenthSeconds = Math.floor(elapsed % (1000) / 100)
-    let seconds = timeHelper.alwaysTwoDigits(Math.floor((elapsed % (1000 * 60)) / 1000));
-    let minutes = timeHelper.alwaysTwoDigits(Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60)));
-    let hours = timeHelper.alwaysTwoDigits(Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+    const tenthSeconds = Math.floor(elapsed % (1000) / 100)
+    const seconds = timeHelper.alwaysTwoDigits(Math.floor((elapsed % (1000 * 60)) / 1000));
+    const minutes = timeHelper.alwaysTwoDigits(Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60)));
+    const hours = timeHelper.alwaysTwoDigits(Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
     const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
 
     const dayOrDays = days === 1 ? 'day' : 'days';

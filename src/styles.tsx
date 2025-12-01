@@ -6,6 +6,7 @@ import { media } from "./media";
 
 const base = 12;
 const purple = "#9d00d6";
+const orange = "#FF8D03";
 
 type MarginProps = {
   bottom?: number;
@@ -103,14 +104,15 @@ export const GetAppLink = styled.div`
   height: 200px;
   width: 200px;
   border-radius: 200px;
-  background-color: ${purple};
+  background-color: ${orange};
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
+  font-weight: 800;
 
   &:hover {
-    background-color: ${lighten(0.1, purple)};
+    background-color: ${lighten(0.1, orange)};
   }
 
   ${media.md} {
