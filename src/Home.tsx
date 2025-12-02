@@ -5,11 +5,11 @@ export function Home() {
   return (
     <Container>
       <H1>How long has it been since your last burrito?</H1>
-      <Margin bottom={2}>
+      <Margin $bottom={2}>
         <BurritoTimer />
       </Margin>
       <p>Use this app to help you keep track, and you will never be lost.</p>
-      <Margin top={2}>
+      <Margin $top={2}>
         <a
           style={{
             textDecoration: "none",
