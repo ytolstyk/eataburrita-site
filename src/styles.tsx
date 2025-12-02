@@ -92,9 +92,12 @@ export const Container = styled.div`
 export const TimerText = styled.div`
   font-size: 60px;
   font-weight: 300;
+  width: 500px;
+  white-space: nowrap;
 
   ${media.md} {
     font-size: 48px;
+    width: 380px;
   }
 `;
 
