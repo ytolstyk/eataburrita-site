@@ -14,7 +14,7 @@ export function Home() {
           style={{
             textDecoration: "none",
           }}
-          href="https://play.google.com/store/apps/details?id=com.ytolstykh.eataburrita"
+          href="https://play.google.com/store/apps/details?id=com.tolstykh.eatABurrita"
           target="_blank"
           rel="noreferrer noopener"
         >
