@@ -13,147 +13,199 @@ export function Privacy() {
       <br />
       <strong>Information Collection and Use</strong>
       <p>
-        The Application collects information when you download and use it. This
-        information may include information such as{" "}
+        The Application collects and stores the following information locally on
+        your device to provide its core functionality:
       </p>
       <ul>
-        <li>Your device's Internet Protocol address (e.g. IP address)</li>
         <li>
-          The pages of the Application that you visit, the time and date of your
-          visit, the time spent on those pages
+          <strong>Burrito log entries</strong> — timestamp, GPS coordinates,
+          location name, and calorie estimate for each entry you record
         </li>
-        <li>The time spent on the Application</li>
-        <li>The operating system you use on your mobile device</li>
+        <li>
+          <strong>App preferences</strong> — dark mode setting, notification
+          toggles, and ingredient checkbox state, stored via Android DataStore
+        </li>
+        <li>
+          <strong>Device location</strong> — precise GPS coordinates (via
+          ACCESS_FINE_LOCATION) and approximate location (via
+          ACCESS_COARSE_LOCATION), collected when you log a burrito, search for
+          nearby restaurants, or when geofence monitoring is active
+        </li>
       </ul>
-      <p></p>
-      <br />
       <p>
-        The Application does not gather precise information about the location
-        of your mobile device.
-      </p>
-      <div>
-        <p>
-          The Application collects your device's location, which helps the
-          Service Provider determine your approximate geographical location and
-          make use of in below ways:
-        </p>
-        <ul>
-          <li>
-            Geolocation Services: The Service Provider utilizes location data to
-            provide features such as personalized content, relevant
-            recommendations, and location-based services.
-          </li>
-          <li>
-            Analytics and Improvements: Aggregated and anonymized location data
-            helps the Service Provider to analyze user behavior, identify
-            trends, and improve the overall performance and functionality of the
-            Application.
-          </li>
-          <li>
-            Third-Party Services: Periodically, the Service Provider may
-            transmit anonymized location data to external services. These
-            services assist them in enhancing the Application and optimizing
-            their offerings. Specifically, the Application uses Google Maps to
-            determine the relevant businesses closest to your current location.
-          </li>
-        </ul>
-      </div>
-      <br />
-      <p>
-        The Service Provider may use the information you provided to contact you
-        from time to time to provide you with important information, required
-        notices and marketing promotions.
+        All burrito log data and preferences are stored locally on your device
+        using a Room database and Android DataStore. This data is never
+        transmitted to the Service Provider's servers.
       </p>
       <br />
+      <strong>Location Data</strong>
       <p>
-        For a better experience, while using the Application, the Service
-        Provider may require you to provide us with certain personally
-        identifiable information. The information that the Service Provider
-        request will be retained by them and used as described in this privacy
-        policy.
+        The Application requests the following location permissions and uses them
+        as described:
+      </p>
+      <ul>
+        <li>
+          <strong>Precise location (ACCESS_FINE_LOCATION)</strong> — used to
+          tag the GPS coordinates of a burrito entry when you choose to record a
+          location, and to determine your country code for the local recipe
+          recommendation feature.
+        </li>
+        <li>
+          <strong>Approximate location (ACCESS_COARSE_LOCATION)</strong> — used
+          as a fallback for nearby restaurant searches when precise location is
+          unavailable.
+        </li>
+        <li>
+          <strong>Background location (ACCESS_BACKGROUND_LOCATION)</strong> —
+          used exclusively for geofence monitoring. When enabled, the
+          Application registers geofences around your top burrito locations and
+          sends a local notification when you enter one. This permission is
+          optional and only active if you have geofence notifications turned on
+          in Settings.
+        </li>
+      </ul>
+      <p>
+        Location data is transmitted to Google Maps and Google Places APIs
+        solely to display a map and search for nearby Mexican restaurants. The
+        Service Provider does not retain or have access to this data. See
+        Google's privacy policy for details on how Google handles location data.
+      </p>
+      <br />
+      <strong>Camera and Photos</strong>
+      <p>
+        The Application requests camera access (CAMERA permission) to allow you
+        to photograph food for the burrito classifier feature and to attach
+        photos to your burrito log entries (photo gallery). Image classification
+        is performed entirely on-device using Google ML Kit — no photos or
+        image data are transmitted to external servers by the Service Provider.
+        Photos you add to your log are stored locally on your device.
+      </p>
+      <br />
+      <strong>Notifications</strong>
+      <p>
+        The Application requests notification permission (POST_NOTIFICATIONS) to
+        send the following local notifications, all of which are optional and
+        individually toggleable in Settings:
+      </p>
+      <ul>
+        <li>
+          <strong>Reminders</strong> — sent after 3 or 7 days without logging a
+          burrito to encourage you to keep your streak going.
+        </li>
+        <li>
+          <strong>Streak milestones</strong> — sent when you reach a consecutive
+          day streak (7, 14, 30, or 50 days).
+        </li>
+        <li>
+          <strong>Geofence alerts</strong> — sent when your device enters a
+          geofence around one of your top burrito locations (requires background
+          location permission).
+        </li>
+        <li>
+          <strong>Weekly recap</strong> — a Monday morning summary of your
+          burrito activity from the prior week.
+        </li>
+      </ul>
+      <p>
+        All notifications are generated and delivered locally by the
+        Application. No notification content or delivery data is transmitted to
+        the Service Provider.
+      </p>
+      <br />
+      <strong>Background Processing</strong>
+      <p>
+        The Application uses Android WorkManager to run a background check every
+        12 hours to determine whether a reminder, streak milestone, or weekly
+        recap notification should be sent. The Application also registers a boot
+        receiver (RECEIVE_BOOT_COMPLETED) to re-register geofences after your
+        device restarts. No data is transmitted during these background
+        operations.
       </p>
       <br />
       <strong>Third Party Access</strong>
       <p>
-        Only aggregated, anonymized data is periodically transmitted to external
-        services to aid the Service Provider in improving the Application and
-        their service. The Service Provider may share your information with
-        third parties in the ways that are described in this privacy statement.
-      </p>
-      <br />
-      <p>
-        The Service Provider may disclose User Provided and Automatically
-        Collected Information:
+        The Application uses the following third-party services that may receive
+        limited data:
       </p>
       <ul>
         <li>
-          as required by law, such as to comply with a subpoena, or similar
-          legal process;
+          <strong>Google Maps SDK &amp; Places API</strong> — receives your
+          location to display a map and search for nearby Mexican restaurants.
+          Subject to{" "}
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Google's Privacy Policy
+          </a>
+          .
         </li>
         <li>
-          when they believe in good faith that disclosure is necessary to
-          protect their rights, protect your safety or the safety of others,
-          investigate fraud, or respond to a government request;
+          <strong>Google ML Kit</strong> — on-device image classification only;
+          no image data leaves your device.
         </li>
         <li>
-          with their trusted services providers who work on their behalf, do not
-          have an independent use of the information we disclose to them, and
-          have agreed to adhere to the rules set forth in this privacy
-          statement.
+          <strong>Google Play Services &amp; WorkManager</strong> — used for
+          geofencing, location, and background scheduling. Subject to Google's
+          Privacy Policy.
         </li>
       </ul>
-      <p></p>
+      <p>
+        The Service Provider may disclose information only as required by law,
+        to protect rights or safety, or with trusted service providers who are
+        bound by confidentiality obligations.
+      </p>
       <br />
       <strong>Opt-Out Rights</strong>
       <p>
-        You can stop all collection of information by the Application easily by
-        uninstalling it. You may use the standard uninstall processes as may be
-        available as part of your mobile device or via the mobile application
-        marketplace or network.
+        You can disable individual features at any time:
       </p>
+      <ul>
+        <li>
+          Turn off individual notification types in the App's Settings screen.
+        </li>
+        <li>
+          Revoke location or camera permissions in your device's system settings
+          at any time.
+        </li>
+        <li>
+          You can stop all collection of information by uninstalling the
+          Application using the standard uninstall process available on your
+          device or via the app marketplace.
+        </li>
+      </ul>
       <br />
       <strong>Data Retention Policy</strong>
       <p>
-        The Service Provider will retain User Provided data for as long as you
-        use the Application and for a reasonable time thereafter. If you'd like
-        them to delete User Provided Data that you have provided via the
-        Application, please contact them at eataburrita@gmail.com and they will
-        respond in a reasonable time.
+        All data (burrito log entries, preferences) is stored locally on your
+        device and remains under your control. You can delete individual entries
+        or reset all data from the Settings screen. Uninstalling the Application
+        removes all locally stored data. If you have questions about data
+        deletion, contact the Service Provider at eataburrita@gmail.com.
       </p>
       <br />
       <strong>Children</strong>
       <p>
         The Service Provider does not use the Application to knowingly solicit
-        data from or market to children under the age of 13.
+        data from or market to children under the age of 13. The Service
+        Provider does not knowingly collect personally identifiable information
+        from children. Parents and guardians are encouraged to monitor their
+        children's use of the Application. If you believe a child has provided
+        personally identifiable information through the Application, please
+        contact the Service Provider at eataburrita@gmail.com. You must be at
+        least 16 years of age to consent to the processing of your personally
+        identifiable information (in some countries a parent or guardian may
+        consent on your behalf).
       </p>
-      <div>
-        <br />
-        <p>
-          The Service Provider does not knowingly collect personally
-          identifiable information from children. The Service Provider
-          encourages all children to never submit any personally identifiable
-          information through the Application and/or Services. The Service
-          Provider encourage parents and legal guardians to monitor their
-          children's Internet usage and to help enforce this Policy by
-          instructing their children never to provide personally identifiable
-          information through the Application and/or Services without their
-          permission. If you have reason to believe that a child has provided
-          personally identifiable information to the Service Provider through
-          the Application and/or Services, please contact the Service Provider
-          (eataburrita@gmail.com) so that they will be able to take the
-          necessary actions. You must also be at least 16 years of age to
-          consent to the processing of your personally identifiable information
-          in your country (in some countries we may allow your parent or
-          guardian to do so on your behalf).
-        </p>
-      </div>
       <br />
       <strong>Security</strong>
       <p>
         The Service Provider is concerned about safeguarding the confidentiality
-        of your information. The Service Provider provides physical, electronic,
-        and procedural safeguards to protect information the Service Provider
-        processes and maintains.
+        of your information. Since all data is stored locally on your device,
+        the security of your data depends in part on the security of your
+        device. The Service Provider recommends using device-level security
+        features such as screen locks and keeping your operating system updated.
       </p>
       <br />
       <strong>Changes</strong>
@@ -165,7 +217,7 @@ export function Privacy() {
         is deemed approval of all changes.
       </p>
       <br />
-      <p>This privacy policy is effective as of 2025-12-01</p>
+      <p>This privacy policy is effective as of 2026-06-06</p>
       <br />
       <strong>Your Consent</strong>
       <p>
@@ -179,17 +231,6 @@ export function Privacy() {
         If you have any questions regarding privacy while using the Application,
         or have questions about the practices, please contact the Service
         Provider via email at eataburrita@gmail.com.
-      </p>
-      <hr />
-      <p>
-        This privacy policy page was generated by{" "}
-        <a
-          href="https://app-privacy-policy-generator.nisrulz.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          App Privacy Policy Generator
-        </a>
       </p>
     </BoringContainer>
   );

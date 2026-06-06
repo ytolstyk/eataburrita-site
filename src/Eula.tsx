@@ -41,7 +41,7 @@ export function Eula() {
         The Application stores and processes personal data that you have
         provided to the Service Provider in order to provide the Service. It is
         your responsibility to maintain the security of your phone and access to
-        the Application. The Service Provider strongly advise against
+        the Application. The Service Provider strongly advises against
         jailbreaking or rooting your phone, which involves removing software
         restrictions and limitations imposed by the official operating system of
         your device. Such actions could expose your phone to malware, viruses,
@@ -49,6 +49,51 @@ export function Eula() {
         result in the Application not functioning correctly or at all.
       </p>
       <br />
+      <strong>Permissions and Device Features</strong>
+      <p>
+        By using the Application, you acknowledge and agree that the Application
+        may request access to the following device capabilities:
+      </p>
+      <ul>
+        <li>
+          <strong>Location (precise, approximate, and background)</strong> —
+          used to tag burrito entries with a location, find nearby Mexican
+          restaurants via Google Maps and Places, determine your local recipe
+          region, and monitor geofences around your favorite burrito spots when
+          geofence notifications are enabled. Background location access is only
+          used for geofence monitoring and can be disabled in the App's Settings
+          or your device's system settings at any time.
+        </li>
+        <li>
+          <strong>Camera</strong> — used to photograph food for on-device
+          burrito classification (powered by Google ML Kit) and to attach photos
+          to your burrito log entries. No images are transmitted to external
+          servers by the Service Provider.
+        </li>
+        <li>
+          <strong>Notifications</strong> — used to send optional local
+          reminders, streak milestones, geofence alerts, and weekly recap
+          digests. Each notification type can be enabled or disabled
+          independently in the App's Settings screen.
+        </li>
+        <li>
+          <strong>Boot completed (system event)</strong> — used to re-register
+          geofences after your device restarts, so geofence notifications
+          continue to work as expected.
+        </li>
+        <li>
+          <strong>Internet</strong> — required for Google Maps display and the
+          Places API restaurant search. The Application does not transmit your
+          personal burrito log data over the internet.
+        </li>
+      </ul>
+      <p>
+        You may revoke any of these permissions at any time through your
+        device's system settings. Revoking a permission will disable the
+        corresponding feature in the Application.
+      </p>
+      <br />
+      <strong>Internet Connectivity</strong>
       <p>
         Please be aware that the Service Provider does not assume responsibility
         for certain aspects. Some functions of the Application require an active
@@ -79,16 +124,32 @@ export function Eula() {
         cannot be held responsible.
       </p>
       <br />
+      <strong>Third-Party Services</strong>
       <p>
-        In terms of the Service Provider's responsibility for your use of the
-        application, it is important to note that while they strive to ensure
-        that it is updated and accurate at all times, they do rely on third
-        parties to provide information to them so that they can make it
-        available to you. The Service Provider accepts no liability for any
-        loss, direct or indirect, that you experience as a result of relying
-        entirely on this functionality of the application.
+        The Application integrates with the following third-party services,
+        which are governed by their own terms and privacy policies:
+      </p>
+      <ul>
+        <li>
+          Google Maps SDK and Google Places API — for map display and nearby
+          restaurant search
+        </li>
+        <li>
+          Google ML Kit — for on-device image classification (no data
+          transmitted externally)
+        </li>
+        <li>
+          Google Play Services — for location, geofencing, and background
+          scheduling via WorkManager
+        </li>
+      </ul>
+      <p>
+        The Service Provider accepts no liability for any loss, direct or
+        indirect, that you experience as a result of relying entirely on
+        third-party functionality within the application.
       </p>
       <br />
+      <strong>Updates and Termination</strong>
       <p>
         The Service Provider may wish to update the application at some point.
         The application is currently available as per the requirements for the
@@ -115,24 +176,13 @@ export function Eula() {
         the new Terms and Conditions on this page.
       </p>
       <br />
-      <p>These terms and conditions are effective as of 2025-12-01</p>
+      <p>These terms and conditions are effective as of 2026-06-06</p>
       <br />
       <strong>Contact Us</strong>
       <p>
         If you have any questions or suggestions about the Terms and Conditions,
         please do not hesitate to contact the Service Provider at
         eataburrita@gmail.com.
-      </p>
-      <hr />
-      <p>
-        This Terms and Conditions page was generated by{" "}
-        <a
-          href="https://app-privacy-policy-generator.nisrulz.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          App Privacy Policy Generator
-        </a>
       </p>
     </BoringContainer>
   );
