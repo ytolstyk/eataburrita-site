@@ -65,10 +65,12 @@ export function Eula() {
           or your device's system settings at any time.
         </li>
         <li>
-          <strong>Camera</strong> — used to photograph food for on-device
-          burrito classification (powered by Google ML Kit) and to attach photos
-          to your burrito log entries. No images are transmitted to external
-          servers by the Service Provider.
+          <strong>Camera</strong> — used to photograph food for burrito
+          classification (powered by the Google Gemini API) and to attach photos
+          to your burrito log entries. When the scanner is used, a compressed
+          version of your photo is transmitted to Google's Gemini API for
+          analysis. Photos attached to log entries are stored locally on your
+          device only.
         </li>
         <li>
           <strong>Notifications</strong> — used to send optional local
@@ -135,8 +137,9 @@ export function Eula() {
           restaurant search
         </li>
         <li>
-          Google ML Kit — for on-device image classification (no data
-          transmitted externally)
+          Google Gemini API — for cloud-based burrito image classification;
+          a compressed photo is transmitted to Google's servers when the scanner
+          is used
         </li>
         <li>
           Google Play Services — for location, geofencing, and background
@@ -176,7 +179,7 @@ export function Eula() {
         the new Terms and Conditions on this page.
       </p>
       <br />
-      <p>These terms and conditions are effective as of 2026-06-06</p>
+      <p>These terms and conditions are effective as of 2026-06-08</p>
       <br />
       <strong>Contact Us</strong>
       <p>

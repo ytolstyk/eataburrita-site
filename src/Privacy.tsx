@@ -75,10 +75,12 @@ export function Privacy() {
       <p>
         The Application requests camera access (CAMERA permission) to allow you
         to photograph food for the burrito classifier feature and to attach
-        photos to your burrito log entries (photo gallery). Image classification
-        is performed entirely on-device using Google ML Kit — no photos or
-        image data are transmitted to external servers by the Service Provider.
-        Photos you add to your log are stored locally on your device.
+        photos to your burrito log entries (photo gallery). When you use the
+        burrito scanner, the photo is compressed and transmitted to the Google
+        Gemini API for cloud-based image analysis. This data is subject to
+        Google's privacy policy and terms of service. Photos you add to your
+        log are stored locally on your device and are not transmitted by the
+        Service Provider.
       </p>
       <br />
       <strong>Notifications</strong>
@@ -142,8 +144,17 @@ export function Privacy() {
           .
         </li>
         <li>
-          <strong>Google ML Kit</strong> — on-device image classification only;
-          no image data leaves your device.
+          <strong>Google Gemini API</strong> — receives a compressed copy of
+          your photo when you use the burrito scanner feature, to perform
+          cloud-based image analysis. Subject to{" "}
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Google's Privacy Policy
+          </a>
+          .
         </li>
         <li>
           <strong>Google Play Services &amp; WorkManager</strong> — used for
@@ -217,7 +228,7 @@ export function Privacy() {
         is deemed approval of all changes.
       </p>
       <br />
-      <p>This privacy policy is effective as of 2026-06-06</p>
+      <p>This privacy policy is effective as of 2026-06-08</p>
       <br />
       <strong>Your Consent</strong>
       <p>
